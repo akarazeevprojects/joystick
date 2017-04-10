@@ -66,24 +66,15 @@ root = Tk()
 def drawcircle(canv,x,y,rad):
     return canv.create_oval(x-rad,y-rad,x+rad,y+rad,width=0,fill='blue')
 
-def sign(x):
-    if x > 0:
-        return 1
-    elif x == 0:
-        return 0
-    else:
-        return -1
-
-def func(x):
-    return sign(x) * 4 * (abs(x) ** .5)
-
 def movecircle(canv, cir):
     x = readadc(adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
     y = readadc(adc2, SPICLK, SPIMOSI, SPIMISO, SPICS)
-    vx = func((x-514)/400.)
-    vy = func((y-536)/400.)
-    # print(vx, vy)
-    canv.move(cir, -vx, -vy)
+
+    tup = canv.coords(cir)
+    dx = tup[2]-tup[0]
+    dy = tup[3]-tup[1]
+    
+    canv.coords(cir, x-(dx/2.), y-(dy/2.), x+(dx/2.), y+(dy/2.))
 
 def callback(event=None):
     movecircle(canvas, circ1)
@@ -94,15 +85,6 @@ canvas = Canvas(width=600, height=600, bg='white')
 canvas.pack()
 
 circ1=drawcircle(canvas,100,100,20)          
-circ2=drawcircle(canvas,500,100,20)
 
 root.after(0, callback)
 root.mainloop()
-
-# while True:
-#     x = readadc(adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
-#     y = readadc(adc2, SPICLK, SPIMOSI, SPIMISO, SPICS)
-#     circle(x, y, CIRCLE_RADIUS)
-#     print(x, y)
-#     time.sleep(0.05)
-    # root.mainloop()

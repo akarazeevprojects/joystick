@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 
+# Written by Limor "Ladyada" Fried for Adafruit Industries, (c) 2015
+# This code is released into the public domain
+
 import time
 import os
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
+DEBUG = 0 
 
 # read SPI data from MCP3008 chip, 8 possible adc's (0 thru 7)
 def readadc(adcnum, clockpin, mosipin, misopin, cspin):
@@ -54,55 +58,27 @@ GPIO.setup(SPIMISO, GPIO.IN)
 GPIO.setup(SPICLK, GPIO.OUT)
 GPIO.setup(SPICS, GPIO.OUT)
 
-adc1 = 0;
-adc2 = 1;
-adc3 = 2;
+########################
+led = 26
 
-########
-from Tkinter import *
+GPIO.setup(led, GPIO.OUT)# set GPIO 24 as output for red led  
+  
+red = GPIO.PWM(led, 100)      # create object red for PWM on port 24 at 100 Hertz
+  
+red.start(10) 
+########################
 
-root = Tk()
+# 10k trim pot connected to adc #0
+potentiometer_adc = 0;
 
-def drawcircle(canv,x,y,rad):
-    return canv.create_oval(x-rad,y-rad,x+rad,y+rad,width=0,fill='blue')
+try:
+    while True:
+        trim_pot = readadc(potentiometer_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
+        set_bright = int(round(trim_pot/10.24))
+        # print trim_pot, set_bright
+        red.ChangeDutyCycle(set_bright)
+        time.sleep(0.02)
 
-def sign(x):
-    if x > 0:
-        return 1
-    elif x == 0:
-        return 0
-    else:
-        return -1
-
-def func(x):
-    return sign(x) * 4 * (abs(x) ** .5)
-
-def movecircle(canv, cir):
-    x = readadc(adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
-    y = readadc(adc2, SPICLK, SPIMOSI, SPIMISO, SPICS)
-    vx = func((x-514)/400.)
-    vy = func((y-536)/400.)
-    # print(vx, vy)
-    canv.move(cir, -vx, -vy)
-
-def callback(event=None):
-    movecircle(canvas, circ1)
-    movecircle(canvas, circ2)
-    root.after(10, callback)
-    
-canvas = Canvas(width=600, height=600, bg='white')
-canvas.pack()
-
-circ1=drawcircle(canvas,100,100,20)          
-circ2=drawcircle(canvas,500,100,20)
-
-root.after(0, callback)
-root.mainloop()
-
-# while True:
-#     x = readadc(adc1, SPICLK, SPIMOSI, SPIMISO, SPICS)
-#     y = readadc(adc2, SPICLK, SPIMOSI, SPIMISO, SPICS)
-#     circle(x, y, CIRCLE_RADIUS)
-#     print(x, y)
-#     time.sleep(0.05)
-    # root.mainloop()
+except KeyboardInterrupt:  
+    red.stop()              # stop the red PWM output  
+    GPIO.cleanup()          # clean up GPIO on CTRL+C exit 
