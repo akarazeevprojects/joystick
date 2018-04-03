@@ -1,8 +1,8 @@
 ## Quantum Keypad
 
+All the code can be found in [quantum_keypad/](quantum_keypad/) folder.
+
 Here I used [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/).
-
-
 
 ## Joystick
 
