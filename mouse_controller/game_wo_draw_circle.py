@@ -101,10 +101,10 @@ def movecircle(canv, cir):
     # else:
     #     old_y = ty
 
-    print tx, ty, '_', x, y, '_', press
+    print(tx, ty, '_', x, y, '_', press)
     autopy.mouse.move(int(tx), int(ty))
 
-    # print p
+    # print(p)
     # (1280, 800)
 
     # canv.coords(cir,x,y)
@@ -112,7 +112,7 @@ def movecircle(canv, cir):
 def callback(event=None):
     movecircle(canvas, a1)
     root.after(1, callback)
-    
+
 #--------->-------->-------->
 import socket, sys
 
@@ -120,7 +120,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 server_address = ('192.168.0.101', 6661)
 # server_address = ('192.168.1.6', 6661)
-print 'starting up on %s port %s' % server_address
+print('starting up on %s port %s' % server_address)
 sock.bind(server_address)
 
 sock.listen(1)
@@ -131,7 +131,7 @@ connection, client_address = sock.accept()
 canvas = Canvas(width=600, height=600, bg='white')
 canvas.pack()
 
-img = PhotoImage(file="pepa.gif")
+img = PhotoImage(file="img/pepa.gif")
 img = img.subsample(5, 5)
 a1 = canvas.create_image(100,100,image=img)
 

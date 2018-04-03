@@ -30,7 +30,7 @@ def movecircle(canv, cir):
     else:
         x = 300
         y = 300
-    print data
+    print(data)
 
     # if inp == False:
     #     if not is_pressed:
@@ -45,7 +45,7 @@ def movecircle(canv, cir):
 def callback(event=None):
     movecircle(canvas, a1)
     root.after(100, callback)
-    
+
 
 #--------->-------->-------->
 import socket, sys
@@ -55,7 +55,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
 server_address = ('192.168.0.100', 6666)
-print 'starting up on %s port %s' % server_address
+print('starting up on %s port %s' % server_address)
 sock.bind(server_address)
 
 # Listen for incoming connections
@@ -67,7 +67,7 @@ connection, client_address = sock.accept()
 canvas = Canvas(width=600, height=600, bg='white')
 canvas.pack()
 
-img = PhotoImage(file="pepa.gif")
+img = PhotoImage(file="img/pepa.gif")
 img = img.subsample(5, 5)
 a1 = canvas.create_image(100,100,image=img)
 
