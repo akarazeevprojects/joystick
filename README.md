@@ -6,11 +6,11 @@ Here I used [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry
 
 | Front side | Back side     |
 | :------------- | :------------- |
-| <img src="img/img3.jpg" width="400px">       | <img src="img/img4.JPG" width="400px">       |
+| <img src="img/img3.jpg" height="500px">       | <img src="img/img4.JPG" height="500px">       |
 
-TODO:
-- [ ] Add info about interface
-- [ ] Add images of interface
+| Bell State | Result of two Hadamard gates     |
+| :------------- | :------------- |
+| <img src="img/img5.jpg" width="500px">       | <img src="img/img6.jpg" width="500px">       |
 
 ## Joystick
 

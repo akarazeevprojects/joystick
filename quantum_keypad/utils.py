@@ -319,4 +319,7 @@ def simulate(grid):
     qc = build_qc(qc, grid, qr, cr)
     result = qp.execute('pi')
 
-    return result.get_counts('pi')
+    tmp = result.get_counts('pi')
+    tmp = dict([(x[0], round(x[1] / 1024, 2)) for x in list(tmp.items())])
+
+    return tmp
