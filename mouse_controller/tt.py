@@ -1,4 +1,9 @@
-#!/usr/bin/env python
+"""
+File name: tt.py
+Author: Anton Karazeev <anton.karazeev@gmail.com>
+
+This file is part of joystick project (https://github.com/akarazeevprojects/joystick)
+"""
 
 import time
 import os
@@ -38,7 +43,7 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
                     adcout |= 0x1
 
     GPIO.output(cspin, True)
-    
+
     adcout >>= 1       # first bit is 'null' so drop it
     return adcout
 
@@ -97,7 +102,7 @@ while True:
     ## Not for .move, only for .coords
     #x *= 600./1023.
     #y *= 600./1023.
-    #x = 600 - x   
+    #x = 600 - x
     #y = 600 - y
 
     # inp = GPIO.input(button)
@@ -110,7 +115,7 @@ while True:
             is_pressed = True
     else:
         is_pressed = False
-    
+
     # msg = ("{} {} {}".format(int(x)in, t(y), int(change))).ljust(16)
     msg = ("{} {} {}".format(x, y, is_wet)).ljust(16)
 
@@ -171,7 +176,7 @@ while True:
 #                     adcout |= 0x1
 
 #     GPIO.output(cspin, True)
-    
+
 #     adcout >>= 1       # first bit is 'null' so drop it
 #     return adcout
 
@@ -240,7 +245,7 @@ while True:
 #     # x *= 600./1023.
 #     # y *= 600./1023.
 
-#     # x = 600 - x   
+#     # x = 600 - x
 #     # y = 600 - y
 
 #     inp = GPIO.input(button)
@@ -264,7 +269,7 @@ while True:
 # def callback(event=None):
 #     movecircle(canvas, a1)
 #     root.after(10, callback)
-    
+
 
 # # #--------->-------->-------->
 # # import socket, sys

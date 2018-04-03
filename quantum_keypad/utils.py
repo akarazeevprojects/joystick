@@ -1,3 +1,10 @@
+"""
+File name: utils.py
+Author: Anton Karazeev <anton.karazeev@gmail.com>
+
+This file is part of joystick project (https://github.com/akarazeevprojects/joystick)
+"""
+
 from qiskit import QuantumProgram
 import numpy as np
 

@@ -1,4 +1,9 @@
-#!/usr/bin/env python
+"""
+File name: game_wo_draw_circle.py
+Author: Anton Karazeev <anton.karazeev@gmail.com>
+
+This file is part of joystick project (https://github.com/akarazeevprojects/joystick)
+"""
 
 import time
 import os

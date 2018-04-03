@@ -1,3 +1,10 @@
+"""
+File name: keypad_server.py
+Author: Anton Karazeev <anton.karazeev@gmail.com>
+
+This file is part of joystick project (https://github.com/akarazeevprojects/joystick)
+"""
+
 import socket
 import sys
 import time
