@@ -12,6 +12,8 @@ Here I used [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry
 | :------------- | :------------- |
 | <img src="img/img5.jpg" width="500px">       | <img src="img/img6.jpg" width="500px">       |
 
+[Video](https://youtu.be/EVqfnaaUThU) demonstration of quantum keypad.
+
 ## Joystick
 
 All the code can be found in [mouse_controller/](mouse_controller/) folder.
