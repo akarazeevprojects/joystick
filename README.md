@@ -1,4 +1,4 @@
-## Quantum Keypad
+## Quantum Keypad [[video demonstration](https://youtu.be/EVqfnaaUThU)]
 
 All the code can be found in [quantum_keypad/](quantum_keypad/) folder.
 
@@ -12,17 +12,13 @@ Here I used [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry
 | :------------- | :------------- |
 | <img src="img/img5.jpg" width="500px">       | <img src="img/img6.jpg" width="500px">       |
 
-[Video](https://youtu.be/EVqfnaaUThU) demonstration of quantum keypad.
-
-## Joystick
+## Joystick [[video demonstration 1](https://youtu.be/bS0-Sjmxa1g)] [[video demonstration 2](https://youtu.be/AWBQyz4jdUo)]
 
 All the code can be found in [mouse_controller/](mouse_controller/) folder.
 
 `Server` was launched on MacBook and `client` was launched on [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/).
 
 Raspberry Pi was used as a controller with joystick and water sensor (it simulates the pressing of Space bar).
-
-Here you can find a [video](https://vk.com/video182954756_456239026) of this setup in action.
 
 | Action | Inside the box     |
 | :------------- | :------------- |
@@ -32,7 +28,7 @@ Here you can find a [video](https://vk.com/video182954756_456239026) of this set
 
 | Name | Description     |
 | :------------- | :------------- |
-| [Etcher](https://etcher.io)       | Burn [Raspbian images](https://www.raspberrypi.org/downloads/raspbian/) to every Raspberries      |
+| [Etcher](https://etcher.io)       | Burn [Raspbian images](https://www.raspberrypi.org/downloads/raspbian/) to Raspberry Pi      |
 | [slither.io](http://slither.io)  | Used this game to test my Joystick made with water sensor  |
 | [autopy](https://github.com/msanders/autopy/)  | Used for controlling the mouse on my MacBook from Python script. Supports only Python 2 |
 | [evdev](https://github.com/gvalkov/python-evdev)  | Python package helped me a lot to read inputs from keypad and turn it into Quantum Keypad. [Here](http://python-evdev.readthedocs.io/en/latest/tutorial.html) one can find awesome tutorial on how to use the evdev  |
