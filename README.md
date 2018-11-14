@@ -1,4 +1,8 @@
-## Quantum Keypad [[video demonstration](https://youtu.be/EVqfnaaUThU)]
+## Quantum Keypad
+
+[[video demonstration](https://youtu.be/EVqfnaaUThU)]
+
+[![](https://img.youtube.com/vi/EVqfnaaUThU/0.jpg)](https://youtu.be/EVqfnaaUThU)
 
 All the code can be found in [quantum_keypad/](quantum_keypad/) folder.
 
@@ -12,7 +16,11 @@ Here I used [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry
 | :------------- | :------------- |
 | <img src="img/img5.jpg" width="500px">       | <img src="img/img6.jpg" width="500px">       |
 
-## Joystick [[video demonstration 1](https://youtu.be/bS0-Sjmxa1g)] [[video demonstration 2](https://youtu.be/AWBQyz4jdUo)]
+## Joystick
+
+| [[video demonstration 1](https://youtu.be/bS0-Sjmxa1g)] | [[video demonstration 2](https://youtu.be/AWBQyz4jdUo)]     |
+| :------------- | :------------- |
+| [![](https://img.youtube.com/vi/bS0-Sjmxa1g/0.jpg)](https://youtu.be/bS0-Sjmxa1g)       | [![](https://img.youtube.com/vi/AWBQyz4jdUo/0.jpg)](https://youtu.be/AWBQyz4jdUo)       |
 
 All the code can be found in [mouse_controller/](mouse_controller/) folder.
 
